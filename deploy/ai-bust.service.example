@@ -1,0 +1,24 @@
+[Unit]
+Description=AI bust paper and dashboard (loopback only; publish read-only through a reverse proxy)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+WorkingDirectory=/opt/ai-bust
+Environment="AI_BUST_UA=Your Name your@email"
+Environment=AI_BUST_REFRESH_MIN=60
+ExecStart=/opt/ai-bust/.venv/bin/uvicorn ai_bust_live:app --host 127.0.0.1 --port 8000
+Restart=on-failure
+RestartSec=5
+Nice=10
+MemoryMax=1500M
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ReadWritePaths=/opt/ai-bust
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,22 @@
+# Read-only public copy of the paper and dashboard behind Caddy (automatic HTTPS).
+# The app has no login, so only GET/HEAD pass and the refresh endpoint and API docs are blocked.
+# Replace the hostname, point its DNS at the server, run the app on 127.0.0.1:8000 (see ai-bust.service.example).
+
+paper.example.org {
+	encode zstd gzip
+
+	@notread not method GET HEAD
+	respond @notread "Read-only site." 405
+
+	@blocked path /api/refresh /docs /docs/* /redoc /openapi.json
+	respond @blocked "Not found." 404
+
+	header {
+		X-Content-Type-Options nosniff
+		Referrer-Policy no-referrer
+		X-Frame-Options DENY
+		-Server
+	}
+
+	reverse_proxy 127.0.0.1:8000
+}

@@ -1,0 +1,28 @@
+{
+  "mode": "recorded",
+  "as_of": "2026-10-05T00:00:00+00:00",
+  "note": "RECORDED snapshot assembled from the figures used in the working paper (5 Oct 2026). It is NOT a pull from the live feeds: the build shell could not reach them. Fields tagged 'placeholder' are stand-ins, not filings data.",
+  "sources": {
+    "rates": {"ok": true, "url": "recorded", "error": null, "fetched_at": "2026-10-05T00:00:00+00:00", "provenance": "paper input: 10-yr 5.29% (news, Sept 2026); 3-month bill 4.4% = 10-yr minus the 0.87pt NY Fed spread"},
+    "px:SOX": {"ok": true, "url": "recorded", "error": null, "provenance": "paper input: fell ~29% from the late-June peak, rebounded ~11% in September => ~21% below peak"},
+    "px:NVDA": {"ok": true, "url": "recorded", "error": null, "provenance": "paper input: realised vol 38.9%, 30-day implied 32.2% (3 Oct 2026)"},
+    "sec:CoreWeave": {"ok": true, "url": "recorded", "error": null, "provenance": "paper input: debt ~$35.1B, annualised revenue ~$12.8B (Q2-2026 disclosures); maturity ladder is a PLACEHOLDER"},
+    "sec:Microsoft": {"ok": true, "url": "recorded", "error": null, "provenance": "research brief: FY27 capex ~$175B (guidance, secondary source)"},
+    "sec:Alphabet": {"ok": true, "url": "recorded", "error": null, "provenance": "research brief: 2026 capex guidance ~$205B (secondary source)"}
+  },
+  "rates": {"date": "2026-10-02", "y3m": 0.044, "y2": null, "y10": 0.0529, "y30": null},
+  "equities": {
+    "SOX": {"date": "2026-10-02", "last": null, "peak_since": null, "drawdown": 0.21, "vol30": 0.39, "n": 0},
+    "NVDA": {"date": "2026-10-02", "last": null, "peak_since": null, "drawdown": null, "vol30": 0.389, "n": 0}
+  },
+  "companies": {
+    "CoreWeave": {"role": "neocloud", "entity": "CoreWeave, Inc.", "debt": 35.1, "revenue_ttm": 12.8, "interest_ttm": null,
+                  "maturity_ladder": [5.2, 7.0, 8.4, 7.6, 4.9, 2.0], "maturity_asof": "2026-06-30",
+                  "maturity_note": "PLACEHOLDER ladder (not from the 10-Q): shaped like the model's current loan book"},
+    "Microsoft": {"role": "hyperscaler", "capex_ttm": 175.0},
+    "Alphabet": {"role": "hyperscaler", "capex_ttm": 205.0}
+  },
+  "manual": {"nvda_iv": 0.322, "nc_spread": 0.055, "oracle_cds": 0.0227,
+             "hyperscaler_capex_plan_2027": 700.0,
+             "manual_note": "CoreWeave term loan SOFR+550bp; Oracle 5-yr CDS 227bp (28 Sep 2026); 2027 capex plan $700B (four hyperscalers)"}
+}

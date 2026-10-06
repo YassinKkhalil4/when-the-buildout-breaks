@@ -1,0 +1,31 @@
+[14:41:44] START .venv/bin/python ai_bust_probability.py --fast
+economic_bust
+   end-2027 {'fundamentals': 0.178, 'history': 0.252, 'market': 0.063, 'indicators': 0.276} -> combined 0.169 (0.12-0.23)
+   end-2028 {'fundamentals': 0.339, 'history': 0.466, 'market': 0.109, 'indicators': 0.373} -> combined 0.295 (0.21-0.39)
+   end-2029 {'fundamentals': 0.447, 'history': 0.601, 'market': 0.151, 'indicators': 0.457} -> combined 0.395 (0.29-0.50)
+market_crash
+   end-2027 {'fundamentals': 0.231, 'history': 0.468, 'market': 0.357, 'indicators': 0.562} -> combined 0.365 (0.29-0.44)
+   end-2028 {'fundamentals': 0.389, 'history': 0.629, 'market': 0.453, 'indicators': 0.747} -> combined 0.521 (0.42-0.61)
+   end-2029 {'fundamentals': 0.488, 'history': 0.654, 'market': 0.506, 'indicators': 0.764} -> combined 0.582 (0.48-0.66)
+[14:43:08] END rc=0 84s :: .venv/bin/python ai_bust_probability.py --fast
+[14:43:08] START .venv/bin/python ai_bust_probability.py
+economic_bust
+   end-2027 {'fundamentals': 0.178, 'history': 0.252, 'market': 0.063, 'indicators': 0.276} -> combined 0.169 (0.12-0.23)
+   end-2028 {'fundamentals': 0.339, 'history': 0.466, 'market': 0.109, 'indicators': 0.373} -> combined 0.295 (0.21-0.39)
+   end-2029 {'fundamentals': 0.447, 'history': 0.601, 'market': 0.151, 'indicators': 0.457} -> combined 0.395 (0.29-0.50)
+market_crash
+   end-2027 {'fundamentals': 0.231, 'history': 0.468, 'market': 0.357, 'indicators': 0.562} -> combined 0.365 (0.29-0.44)
+   end-2028 {'fundamentals': 0.389, 'history': 0.629, 'market': 0.453, 'indicators': 0.747} -> combined 0.521 (0.42-0.61)
+   end-2029 {'fundamentals': 0.488, 'history': 0.654, 'market': 0.506, 'indicators': 0.764} -> combined 0.582 (0.48-0.66)
+[14:52:22] END rc=0 554s :: .venv/bin/python ai_bust_probability.py
+[14:52:22] START .venv/bin/python run_abm_final.py 24
+ablation done 499
+cliff done 1170
+knockout done 1354
+[15:14:56] END rc=0 1354s :: .venv/bin/python run_abm_final.py 24
+[15:14:56] START .venv/bin/python ai_bust_probability.py --calibrate-mapping
+[15:16:10] END rc=0 74s :: .venv/bin/python ai_bust_probability.py --calibrate-mapping
+ALL_DONE
+[15:16:14] START rerun
+[15:26:33] END rc=0 619s :: .venv/bin/python ai_bust_probability.py (rerun file)
+RERUN_DONE

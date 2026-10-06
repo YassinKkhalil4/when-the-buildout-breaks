@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+live_history.db
+*.log
+!heavy.log
+/paper.html
+results.json
+abm_results.json

@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software, the results or the paper, please cite it as below. The work was written by Claude (Anthropic) at the direction of Yassin Khalil."
+title: "When the Buildout Breaks: models, simulations and dashboard for the probability and damage of an AI investment bust"
+type: software
+version: "2.0.0"
+date-released: "2026-10-06"
+license: Apache-2.0
+authors:
+  - given-names: "Yassin"
+    family-names: "Khalil"
+abstract: "Four independent estimates of the odds of an AI market crash and an economic bust (a revenue simulation, history, market prices and warning indicators), pooled by logarithmic opinion pooling; a 12-sector contagion network (Model D); and a weekly agent-based model of firms, lenders and policy (Model F) with nine switchable mechanisms. Not investment advice."
+keywords:
+  - AI investment boom
+  - financial stability
+  - contagion
+  - agent-based model
+  - crash probability
+preferred-citation:
+  type: report
+  title: "When the Buildout Breaks: How Likely Is an AI Bust, and How Bad Would It Be?"
+  authors:
+    - given-names: "Yassin"
+      family-names: "Khalil"
+  year: 2026
+  month: 10
+  notes: "Working paper, Edition 2. Written by Claude (Anthropic)."

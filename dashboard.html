@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Bust Odds</title>
+<style>
+  :root { --bg:#fafaf9; --card:#fff; --ink:#1c1917; --mute:#78716c; --line:#e7e5e4; --acc:#b45309; --acc2:#44403c; --ok:#15803d; --bad:#b91c1c; --warn:#a16207; --soft:#f5f5f4; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#141210; --card:#1c1917; --ink:#f5f5f4; --mute:#a8a29e; --line:#2e2a27; --acc:#f59e0b; --acc2:#d6d3d1; --ok:#4ade80; --bad:#f87171; --warn:#facc15; --soft:#24201d; } }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif; }
+  header { position:sticky; top:0; z-index:5; background:var(--bg); border-bottom:1px solid var(--line); }
+  .bar { max-width:1080px; margin:0 auto; padding:10px 16px; display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+  .brand { font-weight:700; letter-spacing:-.01em; }
+  nav { display:flex; gap:14px; flex:1; flex-wrap:wrap; font-size:14px; }
+  nav a { color:var(--mute); text-decoration:none; } nav a:hover { color:var(--ink); }
+  main { max-width:1080px; margin:0 auto; padding:0 16px 56px; }
+  section { padding-top:34px; }
+  h1 { font-size:30px; line-height:1.15; margin:28px 0 6px; letter-spacing:-.02em; }
+  h2 { font-size:20px; margin:0 0 4px; letter-spacing:-.01em; }
+  h3 { font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--mute); margin:0 0 8px; font-weight:600; }
+  p { margin:6px 0; } .sub { color:var(--mute); font-size:14px; } .tiny { color:var(--mute); font-size:12px; }
+  .lead { color:var(--mute); max-width:70ch; }
+  .banner { border-left:3px solid var(--warn); background:var(--soft); padding:8px 12px; margin:14px 0; font-size:14px; color:var(--mute); border-radius:0 8px 8px 0; }
+  .grid { display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); margin-top:14px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 18px; }
+  .big { font-size:52px; font-weight:700; letter-spacing:-.03em; line-height:1.05; } .rng { color:var(--mute); font-size:14px; }
+  table { width:100%; border-collapse:collapse; font-size:14px; } th,td { text-align:left; padding:7px 6px; border-bottom:1px solid var(--line); vertical-align:top; } th { color:var(--mute); font-weight:500; }
+  td.n, th.n { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; } tr:last-child td { border-bottom:0; }
+  .badge { display:inline-block; padding:1px 8px; border-radius:999px; font-size:12px; font-weight:600; border:1px solid var(--line); white-space:nowrap; }
+  .b-live,.b-feed { color:var(--ok); border-color:var(--ok); } .b-rec,.b-manual { color:var(--warn); border-color:var(--warn); } .b-def { color:var(--mute); }
+  .ok { color:var(--ok); } .bad { color:var(--bad); } .warn { color:var(--warn); }
+  button { background:var(--card); color:var(--ink); border:1px solid var(--line); border-radius:8px; padding:6px 12px; font:inherit; font-size:14px; cursor:pointer; }
+  button:hover { border-color:var(--acc); }
+  .meter { display:grid; grid-template-columns:110px 1fr 48px; gap:8px; align-items:center; font-size:14px; margin:6px 0; }
+  .track { background:var(--soft); border-radius:6px; height:12px; overflow:hidden; } .fill { background:var(--acc); height:100%; border-radius:6px; } .fill.k { background:var(--acc2); }
+  svg text { fill:var(--mute); font-size:10px; font-family:inherit; }
+  ul { margin:6px 0; padding-left:20px; } li { margin:4px 0; }
+  .card { overflow-x:auto; }
+  @media (max-width:560px) { #oddstab .sub { display:block; } th, td { padding:6px 4px; } .meter { grid-template-columns:84px 1fr 44px; } }
+  footer { border-top:1px solid var(--line); margin-top:40px; padding-top:16px; }
+  @media (max-width:560px) { .big { font-size:42px; } h1 { font-size:25px; } }
+</style>
+</head>
+<body>
+<header><div class="bar">
+  <span class="brand">AI Bust Odds</span>
+  <nav><a href="/paper">Paper</a><a href="#odds">Odds</a><a href="#why">Why methods differ</a><a href="#damage">If it happens</a><a href="#inputs-sec">Inputs</a><a href="#about">Limits</a></nav>
+  <span id="runbadge"></span>
+  <span id="ctl"><button onclick="refresh('live')">Refresh live</button> <button onclick="refresh('recorded')">Replay recorded</button></span>
+</div></header>
+<main>
+  <h1>How likely is an AI bust, and how bad would it be?</h1>
+  <p class="lead">Model output from the working paper “When the Buildout Breaks”, recalibrated on market, rate and filing data. <span id="meta">loading…</span></p>
+  <div class="banner">Estimates for analysis only. Not a forecast and not investment advice. Written by Claude (Anthropic).</div>
+  <div id="warn"></div>
+
+  <section id="odds">
+    <h2>The odds</h2>
+    <p class="sub">Cumulative probability, median of the pooled estimate, with the 10th–90th percentile range.</p>
+    <div class="grid" id="heroes"></div>
+    <div class="card" style="margin-top:12px"><table id="oddstab"></table></div>
+    <div class="card" style="margin-top:12px"><h3>Pooled odds across stored runs</h3><div id="hist"></div><div class="tiny" id="histnote"></div></div>
+  </section>
+
+  <section id="why">
+    <h2>Why the four methods differ</h2>
+    <p class="sub">By end-2028. Each method is an independent estimate; the headline pools them. Credit markets are usually the outlier on the bust.</p>
+    <div class="grid">
+      <div class="card"><h3>Economic bust</h3><div id="m-bust"></div></div>
+      <div class="card"><h3>Market crash</h3><div id="m-crash"></div></div>
+    </div>
+    <p class="tiny">Fundamentals = Model G revenue simulation · History = past booms · Market = options and credit · Indicators = credit growth, run-up, volatility.</p>
+  </section>
+
+  <section id="damage">
+    <h2>If a bust happens</h2>
+    <p class="sub">Two damage models, weighted by the odds above. Figures are averages over all shock draws, not conditional on a bust, so they understate losses in a deep one.</p>
+    <div class="card"><table id="damtab"></table></div>
+    <div class="grid">
+      <div class="card"><h3>Neocloud debt maturity wall ($B)</h3><div id="wall"></div><div class="tiny" id="wallnote"></div></div>
+      <div class="card"><h3>Model D vs F, in short</h3>
+        <ul class="sub"><li><b>Model D</b>: 12-sector contagion network with legal friction. Fat tail, cliff above a ~22–25% shortfall.</li>
+        <li><b>Model F</b>: weekly agent-based model of firms with nine switchable mechanisms. Tail is capped by contracts and rescues.</li>
+        <li>“S&amp;P 500 down 30%” in Model F is a synthetic index, not the real one.</li></ul></div>
+    </div>
+  </section>
+
+  <section id="inputs-sec">
+    <h2>Inputs and data sources</h2>
+    <div class="grid">
+      <div class="card"><h3>Inputs fed to the models</h3><table id="inputs"></table></div>
+      <div class="card"><h3>Data sources</h3><table id="sources"></table></div>
+    </div>
+    <p class="tiny">Credit spreads, option-implied volatility, lab revenue and neocloud backlog have no free feed. They come from manual_inputs.json and are marked manual. Model G stays at its paper calibration.</p>
+  </section>
+
+  <section id="about">
+    <h2>What to keep in mind</h2>
+    <ul class="sub">
+      <li>The odds rest on stated judgment calls (when the boom started, how a shortfall maps to Model F, how strongly the Fed and sovereign buyers respond).</li>
+      <li>Model F ablations are noisy and only loosely paired across seeds; small differences mean nothing.</li>
+      <li>Model F’s no-shock baseline is not quiet: some seeds lose money even at zero shock.</li>
+      <li>Live fetchers have had one real-server run. Check the source table for stale or failed feeds.</li>
+      <li>Credit spreads, implied volatility, lab revenue and backlog are manual inputs.</li>
+    </ul>
+  </section>
+  <footer class="tiny">AI Bust Odds · working-paper model output · refreshed from <span id="foot"></span></footer>
+</main>
+<script>
+const pr = x => x==null ? '–' : Math.floor(Math.round(x*1000)/10 + 0.5) + '%';   // rounds the way the paper does
+const pc = (x, d=0) => x==null ? '–' : d ? (100*x).toFixed(d)+'%' : pr(x);
+const when = t => new Date(t).toLocaleString(undefined, {dateStyle:'medium', timeStyle:'short'});
+const fx = (x, d=1) => x==null ? '–' : Number(x).toFixed(d);
+const esc = t => String(t).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const $ = id => document.getElementById(id);
+const HZ = [['end-2027','End-2027'],['end-2028','End-2028'],['end-2029','End-2029']];
+
+function provBadge(p) {
+  if (!p) return '';
+  const k = /manual/i.test(p) ? 'manual' : /feed|filing|10-K|10-Q/i.test(p) ? 'feed' : /recorded/i.test(p) ? 'rec' : 'def';
+  const label = k==='manual'?'manual':k==='feed'?'live feed':k==='rec'?'recorded':'default';
+  return `<span class="badge b-${k}" title="${esc(p)}">${label}</span>`;
+}
+function hero(title, defn, a) {
+  return `<div class="card"><h3>${title}</h3><div class="big">${pc(a.median)}</div><div class="rng">${pc(a.p10)} – ${pc(a.p90)} (10th–90th)</div><p class="sub">${defn}</p></div>`;
+}
+function meters(obj, cls) {
+  return ['fundamentals','history','market','indicators'].map(k => `<div class="meter"><span>${k}</span><div class="track"><div class="fill ${cls||''}" style="width:${Math.min(100,100*(obj[k]||0))}%"></div></div><span class="n">${pc(obj[k])}</span></div>`).join('');
+}
+
+async function load() {
+  const s = await (await fetch('/api/state')).json();
+  if (s.empty) { $('meta').textContent = 'No runs yet. Press “Replay recorded” or “Refresh live”.'; return; }
+  const r = s.results, eb = r.economic_bust, mc = r.market_crash, live = s.mode==='live';
+  $('runbadge').innerHTML = `<span class="badge ${live?'b-live':'b-rec'}">${live?'LIVE DATA':'RECORDED SNAPSHOT'}</span>`;
+  $('meta').innerHTML = `Run #${s.id}, ${when(s.ts)}.` + (s.status.running ? ' Refreshing…' : '') + (s.status.last_error ? ` <span class="bad">Last error: ${esc(s.status.last_error)}</span>` : '');
+  $('foot').textContent = live ? 'live feeds' : 'a recorded snapshot';
+  $('warn').innerHTML = live ? '' : '<div class="banner">This run uses a recorded snapshot, not a live pull. Values marked placeholder (for example the debt maturity ladder) are stand-ins until a live refresh succeeds.</div>';
+
+  $('heroes').innerHTML = hero('Economic bust by end-2028', 'End-customer AI spending falls 15% or more below the path the buildout was planned for.', eb['end-2028'])
+    + hero('Market crash by end-2028', 'Chip stocks (SOX) fall 40% or more from a peak.', mc['end-2028']);
+  $('oddstab').innerHTML = '<tr><th>Cumulative odds</th>' + HZ.map(h=>`<th class="n">${h[1]}</th>`).join('') + '</tr>'
+    + [['Economic bust', eb], ['Market crash', mc]].map(([n,d]) => `<tr><td>${n}</td>` + HZ.map(h=>`<td class="n"><b>${pc(d[h[0]].median)}</b> <span class="sub">(${pc(d[h[0]].p10)}–${pc(d[h[0]].p90)})</span></td>`).join('') + '</tr>').join('');
+
+  const h = s.history, W=Math.max(300, $('hist').clientWidth||600), H=190, P=34;
+  if (h.length < 2) $('hist').innerHTML = '<p class="sub">One run so far. The chart appears after a second refresh.</p>';
+  else {
+    const xs = h.map((_,i)=>P+(W-2*P)*i/(h.length-1)), y = v => H-P-(H-2*P)*Math.min(1,(v||0)/0.8);
+    const mk = k => 'M'+h.map((v,i)=>xs[i].toFixed(1)+','+y(v[k]).toFixed(1)).join('L');
+    const grid = [0,.2,.4,.6,.8].map(g=>`<line x1="${P}" x2="${W-P}" y1="${y(g)}" y2="${y(g)}" stroke="var(--line)"/><text x="2" y="${y(g)+3}">${Math.round(g*100)}%</text>`).join('');
+    $('hist').innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">${grid}<path d="${mk('p_bust_2027')}" fill="none" stroke="#a8a29e" stroke-width="2"/><path d="${mk('p_bust_2028')}" fill="none" stroke="var(--acc)" stroke-width="3"/><path d="${mk('p_bust_2029')}" fill="none" stroke="var(--acc2)" stroke-width="2"/><text x="${P}" y="12">economic bust: end-2027 (grey), end-2028 (amber), end-2029 (dark)</text></svg>`;
+  }
+  $('histnote').textContent = h.length + ' stored run' + (h.length===1?'':'s');
+
+  const m = r.methods_end2028 || {bust:{},crash:{}};
+  $('m-bust').innerHTML = meters(m.bust) + `<div class="meter"><span><b>Pooled</b></span><div class="track"><div class="fill k" style="width:${100*eb['end-2028'].median}%"></div></div><span><b>${pc(eb['end-2028'].median)}</b></span></div>`;
+  $('m-crash').innerHTML = meters(m.crash) + `<div class="meter"><span><b>Pooled</b></span><div class="track"><div class="fill k" style="width:${100*mc['end-2028'].median}%"></div></div><span><b>${pc(mc['end-2028'].median)}</b></span></div>`;
+
+  const f = (r.expected_damage||{}).model_f || {}, d = (r.expected_damage||{}).model_d || {};
+  const row = (n, a, b) => `<tr><td>${n}</td><td class="n">${a}</td><td class="n">${b}</td></tr>`;
+  $('damtab').innerHTML = '<tr><th>Outcome</th><th class="n">Model D (sector network)</th><th class="n">Model F (firm-level)</th></tr>'
+    + row('Neocloud fails', pc(d.p_neocloud_default), pc(f.p_neocloud_default))
+    + row('Frontier lab fails', pc(d.p_lab_default), pc(f.p_lab_default))
+    + row('Private-credit fund fails', '–', pc(f.p_fund_failure))
+    + row('Bank fails', pc(d.p_bank_default), pc(f.p_bank_failure))
+    + row('Expected credit losses', '$'+fx(d.expected_credit_losses,0)+'B', '$'+fx(f.expected_credit_losses,0)+'B')
+    + row('Chance losses exceed $100B', pc(d.p_credit_gt_100), pc(f.p_credit_gt_100))
+    + row('S&amp;P 500 falls 30%+', pc(d.p_sp500_30), pc(f.p_sp500_30)+' <span class="tiny">(synthetic)</span>')
+    + row('Unemployment reaches 6%', '–', pc(f.p_unemp_6))
+    + row('Sovereign rescue spend (mean)', '–', '$'+fx(f.expected_sovereign_spend,0)+'B')
+    + `<tr><td class="tiny" colspan="3">Model D draws: ${d.n||'–'} · Model F draws: ${f.n||'–'}. Live runs use fewer draws than the paper (Model D 10,000, Model F 400), so Model F is noisy here.</td></tr>`;
+
+  const co = (s.companies||{}).CoreWeave || {}, lad = co.maturity_ladder;
+  if (lad) {
+    const labels = ['Yr 1','Yr 2','Yr 3','Yr 4','Yr 5','Later'], mx = Math.max(...lad.map(x=>x||0), 1);
+    const WW = Math.max(300, $('wall').clientWidth || 480), step = (WW - 20) / 6, bw = step * 0.62;
+    $('wall').innerHTML = `<svg viewBox="0 0 ${WW} 170" width="${WW}" height="170">` + lad.map((v,i)=>{ const hh=110*(v||0)/mx, x=10+i*step+(step-bw)/2; return `<rect x="${x}" y="${135-hh}" width="${bw}" height="${hh}" rx="3" fill="var(--acc2)" opacity=".85"/><text x="${x+bw/2}" y="152" text-anchor="middle">${labels[i]}</text><text x="${x+bw/2}" y="${130-hh}" text-anchor="middle">${fx(v,1)}</text>`; }).join('') + '</svg>';
+    $('wallnote').textContent = 'CoreWeave ladder as of ' + (co.maturity_asof||'?') + (co.maturity_note ? ' · ' + co.maturity_note : '');
+  } else $('wall').innerHTML = '<p class="sub">No ladder available.</p>';
+
+  const c = s.calibration, p = c.provenance, p1 = c.part1;
+  const inp = [['Risk-free (3-mo)', pc(p1.r_free,2), p.r_free], ['SOX volatility range', pc(p1.sigma[0])+' – '+pc(p1.sigma[1]), p.realised_vol],
+    ['SOX drawdown range', pc(p1.sox_drawdown[0])+' – '+pc(p1.sox_drawdown[1]), p.sox_drawdown], ['Neocloud spread', pc(p1.nc_spread[0],1)+' – '+pc(p1.nc_spread[1],1), p.nc_spread],
+    ['NVDA implied vol', pc((s.manual||{}).nvda_iv,1), p.nvda_implied_vol], ['Oracle CDS', pc(p1.oracle_cds,2), p.oracle_cds],
+    ['Hyperscaler capex plan (Model F)', '$'+fx(c.model_f.hs_capex_plan0,0)+'B', p.hs_capex_plan0],
+    ['Neocloud maturity profile (Model F)', c.model_f.nc_maturity_profile ? c.model_f.nc_maturity_profile.map(x=>Math.round(x*100)+'%').join(' / ') : 'default', p.nc_maturity_profile]];
+  $('inputs').innerHTML = '<tr><th>Input</th><th class="n">Value</th><th>Source</th></tr>' + inp.map(x=>`<tr><td>${x[0]}</td><td class="n">${x[1]}</td><td>${provBadge(x[2])}</td></tr>`).join('');
+  $('sources').innerHTML = '<tr><th>Source</th><th>Status</th></tr>' + Object.entries(s.sources).map(([k,v])=>{
+    const st = !v.ok ? ['failed','bad'] : v.stale ? ['stale','warn'] : v.error ? ['ok, via fallback','warn'] : ['ok','ok'];
+    const note = !v.ok ? (v.error||'') : v.error ? 'primary feed failed, fallback used' : '';
+    return `<tr><td>${esc(k)}</td><td class="${st[1]}">${st[0]} <span class="tiny" title="${esc(v.error||'')}">${esc(String(note).slice(0,60))}</span></td></tr>`; }).join('');
+}
+async function refresh(mode) { await fetch('/api/refresh?mode='+mode, {method:'POST'}); setTimeout(poll, 1500); }
+async function poll() { await load(); const s = await (await fetch('/api/state')).json(); if (s.status && s.status.running) setTimeout(poll, 3000); }
+if (!['localhost','127.0.0.1','[::1]'].includes(location.hostname)) $('ctl').style.display = 'none';   // public copy is read-only
+load();
+</script>
+</body>
+</html>

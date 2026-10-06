@@ -1,0 +1,1318 @@
+{
+ "as_of": "2026-10-05",
+ "economic_bust": {
+  "end-2027": {
+   "methods": {
+    "fundamentals": {
+     "median": 0.178175,
+     "p10": 0.11199592875318067,
+     "p90": 0.24049697277209053
+    },
+    "history": {
+     "median": 0.251927585051853,
+     "p10": 0.12208154850445288,
+     "p90": 0.41407443682318845
+    },
+    "market": {
+     "median": 0.06336033190793539,
+     "p10": 0.04906138923156546,
+     "p90": 0.08101393187067137
+    },
+    "indicators": {
+     "median": 0.2756923615615338,
+     "p10": 0.20974542708490684,
+     "p90": 0.3449801875644155
+    }
+   },
+   "combined": {
+    "median": 0.1689442298194498,
+    "p10": 0.11881739117323448,
+    "p90": 0.23449200934054643,
+    "mean": 0.17370402564172313
+   },
+   "leave_one_out": {
+    "fundamentals": 0.16785410575791856,
+    "history": 0.14882377960806129,
+    "market": 0.22902300658228963,
+    "indicators": 0.13966612790521
+   }
+  },
+  "end-2028": {
+   "methods": {
+    "fundamentals": {
+     "median": 0.338675,
+     "p10": 0.20689914448950594,
+     "p90": 0.4774424238508996
+    },
+    "history": {
+     "median": 0.46617501600577255,
+     "p10": 0.31481683986083675,
+     "p90": 0.610698432142124
+    },
+    "market": {
+     "median": 0.10903495973431926,
+     "p10": 0.08489360823297555,
+     "p90": 0.13859579384946352
+    },
+    "indicators": {
+     "median": 0.3729895390316356,
+     "p10": 0.28904284693966537,
+     "p90": 0.45571564583345003
+    }
+   },
+   "combined": {
+    "median": 0.29499490934605777,
+    "p10": 0.21474837652516815,
+    "p90": 0.38802446758075937,
+    "mean": 0.2991208641494568
+   },
+   "leave_one_out": {
+    "fundamentals": 0.28389216778893445,
+    "history": 0.24760655714242946,
+    "market": 0.38731657242462736,
+    "indicators": 0.26897192644295487
+   }
+  },
+  "end-2029": {
+   "methods": {
+    "fundamentals": {
+     "median": 0.4467,
+     "p10": 0.27325984349770216,
+     "p90": 0.6169464654031257
+    },
+    "history": {
+     "median": 0.6009601370123325,
+     "p10": 0.4832297355143537,
+     "p90": 0.7209563177355701
+    },
+    "market": {
+     "median": 0.15077623852115168,
+     "p10": 0.11784845945861665,
+     "p90": 0.19043219691916113
+    },
+    "indicators": {
+     "median": 0.4569322392732081,
+     "p10": 0.3603093098929252,
+     "p90": 0.548339718385783
+    }
+   },
+   "combined": {
+    "median": 0.39454552856972136,
+    "p10": 0.2917337523105714,
+    "p90": 0.5042338297395486,
+    "mean": 0.39651628862858235
+   },
+   "leave_one_out": {
+    "fundamentals": 0.37988136674506634,
+    "history": 0.3263201921065582,
+    "market": 0.5021951241176561,
+    "indicators": 0.3727111997235164
+   }
+  }
+ },
+ "market_crash": {
+  "end-2027": {
+   "methods": {
+    "fundamentals": {
+     "median": 0.23125,
+     "p10": 0.15886641682410876,
+     "p90": 0.31196325759240545
+    },
+    "history": {
+     "median": 0.46800407896977175,
+     "p10": 0.4137121474251193,
+     "p90": 0.5317705792547557
+    },
+    "market": {
+     "median": 0.3566584772415209,
+     "p10": 0.27064630462009814,
+     "p90": 0.45370010335148225
+    },
+    "indicators": {
+     "median": 0.5620659288768715,
+     "p10": 0.5093854598621317,
+     "p90": 0.6185956158648087
+    }
+   },
+   "combined": {
+    "median": 0.36457783138117417,
+    "p10": 0.2883261370825369,
+    "p90": 0.43634127798651917,
+    "mean": 0.3634071698255673
+   },
+   "leave_one_out": {
+    "fundamentals": 0.4438652691745607,
+    "history": 0.3422988191996287,
+    "market": 0.37142505316012214,
+    "indicators": 0.3241934712759863
+   }
+  },
+  "end-2028": {
+   "methods": {
+    "fundamentals": {
+     "median": 0.388625,
+     "p10": 0.24529474555181496,
+     "p90": 0.5376503322707873
+    },
+    "history": {
+     "median": 0.6286856723310706,
+     "p10": 0.5703755773610605,
+     "p90": 0.6980236254400288
+    },
+    "market": {
+     "median": 0.4534459903931307,
+     "p10": 0.36542232349638115,
+     "p90": 0.5548908232306298
+    },
+    "indicators": {
+     "median": 0.7469023185811337,
+     "p10": 0.6967133653857482,
+     "p90": 0.7965274182160859
+    }
+   },
+   "combined": {
+    "median": 0.5206305417288619,
+    "p10": 0.42499622968526934,
+    "p90": 0.6056414338976372,
+    "mean": 0.5174856375107602
+   },
+   "leave_one_out": {
+    "fundamentals": 0.5885444910160874,
+    "history": 0.4960937536146878,
+    "market": 0.5604084888810889,
+    "indicators": 0.46822122984103715
+   }
+  },
+  "end-2029": {
+   "methods": {
+    "fundamentals": {
+     "median": 0.4881,
+     "p10": 0.3060309278350516,
+     "p90": 0.6791300015437947
+    },
+    "history": {
+     "median": 0.6537888156389581,
+     "p10": 0.5994208434507917,
+     "p90": 0.7184390946026792
+    },
+    "market": {
+     "median": 0.505814293951459,
+     "p10": 0.41497508050169324,
+     "p90": 0.6092518671006948
+    },
+    "indicators": {
+     "median": 0.7640132860125244,
+     "p10": 0.7172174162255981,
+     "p90": 0.8102834222243709
+    }
+   },
+   "combined": {
+    "median": 0.5822154616914431,
+    "p10": 0.4835351237915444,
+    "p90": 0.6638593557113219,
+    "mean": 0.5770902931340716
+   },
+   "leave_one_out": {
+    "fundamentals": 0.6267804321279691,
+    "history": 0.5646409039943406,
+    "market": 0.6239608395394999,
+    "indicators": 0.5367795527978552
+   }
+  }
+ },
+ "cross_checks": {
+  "neocloud_default_credit_implied": {
+   "end-2027": {
+    "median": 0.06983786219344235,
+    "p10": 0.054077092669771544,
+    "p90": 0.08929624639520353
+   },
+   "end-2028": {
+    "median": 0.12018195395910221,
+    "p10": 0.09357255453606764,
+    "p90": 0.152764887114446
+   },
+   "end-2029": {
+    "median": 0.1661905777764242,
+    "p10": 0.12989648607490278,
+    "p90": 0.20990069220216967
+   }
+  },
+  "credit_to_bust_ratio": 0.9072490181963904,
+  "oracle_default_cds_implied": {
+   "end-2027": 0.030024044259752053,
+   "end-2028": 0.053041639598034505,
+   "end-2029": 0.07520467002899835
+  },
+  "polymarket": {
+   "industry downturn by 31 Dec 2026": 0.071,
+   "by 30 Jun 2027 (thin market)": 0.18
+  },
+  "ny_fed_recession_12m": 0.139
+ },
+ "history_info": {
+  "gap_years": [
+   3.0,
+   3.0,
+   5.0,
+   5.0,
+   7.0,
+   5.0,
+   5.0,
+   4.0
+  ],
+  "median_gap": 5.0,
+  "lognormal_mu": 1.495897592155978,
+  "lognormal_sd": 0.28828582336458003
+ },
+ "model_g": {
+  "plan_growth": {
+   "2027": 0.5955021205593662,
+   "2028": 0.4473150387374527,
+   "2029": 0.3577631513224322
+  },
+  "fan": [
+   {
+    "t": 2027.0,
+    "p10": 0.9441465771247309,
+    "p25": 0.9689742135986963,
+    "p50": 0.9939015052174931,
+    "p75": 1.0179997097990245,
+    "p90": 1.0387296302040234
+   },
+   {
+    "t": 2027.25,
+    "p10": 0.92248779228547,
+    "p25": 0.9732300802818665,
+    "p50": 1.021955087788682,
+    "p75": 1.0637639833615207,
+    "p90": 1.099288220096674
+   },
+   {
+    "t": 2027.5,
+    "p10": 0.882209187128151,
+    "p25": 0.9629597599554209,
+    "p50": 1.0337862457578586,
+    "p75": 1.0860196289578614,
+    "p90": 1.1359453682702338
+   },
+   {
+    "t": 2027.75,
+    "p10": 0.8251544090530755,
+    "p25": 0.9383096453568028,
+    "p50": 1.0310511465022292,
+    "p75": 1.0941076815875679,
+    "p90": 1.1533931072059451
+   },
+   {
+    "t": 2028.0,
+    "p10": 0.7505797714710223,
+    "p25": 0.9025979842392851,
+    "p50": 1.0191142509788242,
+    "p75": 1.0931190553664418,
+    "p90": 1.1599810901139092
+   },
+   {
+    "t": 2028.25,
+    "p10": 0.6917844306606502,
+    "p25": 0.880366676910701,
+    "p50": 1.0229264343943545,
+    "p75": 1.1038648917017146,
+    "p90": 1.1732018411561163
+   },
+   {
+    "t": 2028.5,
+    "p10": 0.6393243279548125,
+    "p25": 0.8489149001909156,
+    "p50": 1.0199715458939644,
+    "p75": 1.1083215595372296,
+    "p90": 1.1819689311794204
+   },
+   {
+    "t": 2028.75,
+    "p10": 0.59445482995231,
+    "p25": 0.814318604356746,
+    "p50": 1.0113327777766257,
+    "p75": 1.1101241721834825,
+    "p90": 1.18684261389484
+   },
+   {
+    "t": 2029.0,
+    "p10": 0.5559578159387719,
+    "p25": 0.7736458411538547,
+    "p50": 0.9943379554812652,
+    "p75": 1.1091021797243479,
+    "p90": 1.1894176584279414
+   },
+   {
+    "t": 2029.25,
+    "p10": 0.5308993209141563,
+    "p25": 0.7447450569176395,
+    "p50": 0.9860723267266465,
+    "p75": 1.112042015358353,
+    "p90": 1.1945454824411534
+   },
+   {
+    "t": 2029.5,
+    "p10": 0.5067051745000587,
+    "p25": 0.714259676203941,
+    "p50": 0.9713822106835261,
+    "p75": 1.1134380325308415,
+    "p90": 1.1983349111860364
+   },
+   {
+    "t": 2029.75,
+    "p10": 0.4823092586530951,
+    "p25": 0.6845847635741263,
+    "p50": 0.9526850623650752,
+    "p75": 1.1135558675217627,
+    "p90": 1.2004612387833875
+   },
+   {
+    "t": 2030.0,
+    "p10": 0.4598167252419063,
+    "p25": 0.6538627564748543,
+    "p50": 0.9307642164163721,
+    "p75": 1.1126481289092904,
+    "p90": 1.201989361097604
+   }
+  ],
+  "p_stall_by_end_2029": 0.326975,
+  "shortfall_2028_pct": {
+   "10": 0.0,
+   "25": 0.0,
+   "50": 0.052043505712155436,
+   "75": 0.22834899428584773,
+   "90": 0.44455887738337047
+  },
+  "econ": {
+   "end-2027": 0.178175,
+   "end-2028": 0.338675,
+   "end-2029": 0.4467
+  },
+  "market": {
+   "end-2027": 0.23125,
+   "end-2028": 0.388625,
+   "end-2029": 0.4881
+  },
+  "median_revenue_growth": {
+   "2027": 0.6178002839815531,
+   "2028": 0.40553733507701306,
+   "2029": 0.30476509456138046
+  }
+ },
+ "tracker_g": [
+  {
+   "growth_bin": "below 30%",
+   "lo": -1,
+   "hi": 0.3,
+   "share_of_paths": 0.060975,
+   "p_bust_2028": 1.0
+  },
+  {
+   "growth_bin": "30-50%",
+   "lo": 0.3,
+   "hi": 0.5,
+   "share_of_paths": 0.06995,
+   "p_bust_2028": 0.8727662616154396
+  },
+  {
+   "growth_bin": "50-70%",
+   "lo": 0.5,
+   "hi": 0.7,
+   "share_of_paths": 0.2318,
+   "p_bust_2028": 0.5036669542709232
+  },
+  {
+   "growth_bin": "70-90%",
+   "lo": 0.7,
+   "hi": 0.9,
+   "share_of_paths": 0.3805,
+   "p_bust_2028": 0.1980946123521682
+  },
+  {
+   "growth_bin": "above 90%",
+   "lo": 0.9,
+   "hi": 10,
+   "share_of_paths": 0.256775,
+   "p_bust_2028": 0.09551163469963976
+  }
+ ],
+ "median_h1_2027_growth": 0.7762314739370634,
+ "tracker_combined": [
+  {
+   "signal": "AI spending growth Q4-2026 to mid-2027 (annualised) below 30%",
+   "definition": "economic bust",
+   "combined": 0.9214931369951076
+  },
+  {
+   "signal": "AI spending growth Q4-2026 to mid-2027 (annualised) 30-50%",
+   "definition": "economic bust",
+   "combined": 0.443631652503106
+  },
+  {
+   "signal": "AI spending growth Q4-2026 to mid-2027 (annualised) 50-70%",
+   "definition": "economic bust",
+   "combined": 0.3381575568685903
+  },
+  {
+   "signal": "AI spending growth Q4-2026 to mid-2027 (annualised) 70-90%",
+   "definition": "economic bust",
+   "combined": 0.257735415599264
+  },
+  {
+   "signal": "AI spending growth Q4-2026 to mid-2027 (annualised) above 90%",
+   "definition": "economic bust",
+   "combined": 0.21805686033069166
+  },
+  {
+   "signal": "CoreWeave credit spread back to its Dec-2025 peak (8.8%)",
+   "definition": "economic bust",
+   "combined": 0.3180996074630724
+  },
+  {
+   "signal": "CoreWeave credit spread tightens to 4%",
+   "definition": "economic bust",
+   "combined": 0.2798890209445649
+  },
+  {
+   "signal": "AI borrowing growth falls back to normal (leaves the R-zone)",
+   "definition": "economic bust",
+   "combined": 0.23130944739847478
+  },
+  {
+   "signal": "SOX already 30% below its June peak",
+   "definition": "market crash",
+   "combined": 0.5773112953060183
+  },
+  {
+   "signal": "SOX back at a new high",
+   "definition": "market crash",
+   "combined": 0.4639065605235507
+  }
+ ],
+ "history_onset_sensitivity": {
+  "onset 2025-26 (AI capex >1% of GDP)": {
+   "end-2027": 0.005946389249142986,
+   "end-2028": 0.09516769728224667,
+   "end-2029": 0.3073557727594983
+  }
+ },
+ "combined_fixed_weights": {
+  "economic_bust_end-2028": {
+   "median": 0.2948827159740849,
+   "p10": 0.24656814061373025,
+   "p90": 0.3470905424507308,
+   "mean": 0.2959305135624437
+  },
+  "market_crash_end-2028": {
+   "median": 0.5121552333232264,
+   "p10": 0.4490731228435269,
+   "p90": 0.5764475711403482,
+   "mean": 0.5125634613617271
+  }
+ },
+ "tornado_g": {
+  "base": 0.33905,
+  "G0": {
+   "low_value": 0.5,
+   "high_value": 1.5,
+   "p_at_low": 0.8541,
+   "p_at_high": 0.14775
+  },
+  "G_inf": {
+   "low_value": 0.08,
+   "high_value": 0.25,
+   "p_at_low": 0.3955,
+   "p_at_high": 0.28575
+  },
+  "phi": {
+   "low_value": 0.4,
+   "high_value": 0.8,
+   "p_at_low": 0.52035,
+   "p_at_high": 0.22275
+  },
+  "sigma_g": {
+   "low_value": 0.08,
+   "high_value": 0.2,
+   "p_at_low": 0.31,
+   "p_at_high": 0.36675
+  },
+  "lam": {
+   "low_value": 0.05,
+   "high_value": 0.2,
+   "p_at_low": 0.2484,
+   "p_at_high": 0.4155
+  },
+  "f_share": {
+   "low_value": 0.3,
+   "high_value": 0.5,
+   "p_at_low": 0.3206,
+   "p_at_high": 0.36475
+  },
+  "w_v": {
+   "low_value": 0.04,
+   "high_value": 0.15,
+   "p_at_low": 0.3454,
+   "p_at_high": 0.3311
+  },
+  "kappa_s": {
+   "low_value": 0.4,
+   "high_value": 0.8,
+   "p_at_low": 0.33395,
+   "p_at_high": 0.3433
+  },
+  "x_f": {
+   "low_value": 0.2,
+   "high_value": 0.5,
+   "p_at_low": 0.3333,
+   "p_at_high": 0.34395
+  },
+  "power_scale": {
+   "low_value": 0.7,
+   "high_value": 1.3,
+   "p_at_low": 0.2467,
+   "p_at_high": 0.393
+  },
+  "headroom": {
+   "low_value": 0.0,
+   "high_value": 0.3,
+   "p_at_low": 0.33735,
+   "p_at_high": 0.33735
+  },
+  "stress": {
+   "sticky tier is not sticky (growth slows 100%, level -25%)": 0.3568,
+   "hard power cap (no revenue headroom)": 0.33735,
+   "power ceiling 30% lower (grid slower than central)": 0.2467,
+   "flighty share 50%, sovereign 4%": 0.3734
+  }
+ },
+ "tier_diagnostics": {
+  "median_revenue_index_by_tier": {
+   "f": {
+    "2027": 0.38936265239979084,
+    "2028": 0.4896710314096902,
+    "2029": 0.5114547291061446,
+    "2030": 0.5027838800755631
+   },
+   "s": {
+    "2027": 0.664060897327537,
+    "2028": 1.2080647195802632,
+    "2029": 1.7988916816156566,
+    "2030": 2.3641749966523693
+   },
+   "v": {
+    "2027": 0.11541308854586943,
+    "2028": 0.20944636316637608,
+    "2029": 0.31465825185646346,
+    "2030": 0.4191099584992918
+   }
+  },
+  "median_share_by_tier": {
+   "f": {
+    "2027": 0.33176903861809215,
+    "2028": 0.2518499055181361,
+    "2029": 0.19374604284896998,
+    "2030": 0.15367351791309178
+   },
+   "s": {
+    "2027": 0.5668541319976272,
+    "2028": 0.6320836511633243,
+    "2029": 0.6774411569261838,
+    "2030": 0.7084743042639094
+   },
+   "v": {
+    "2027": 0.0985208806675659,
+    "2028": 0.1125862520819719,
+    "2029": 0.1217468330820585,
+    "2030": 0.12740297873634188
+   }
+  },
+  "median_total_demand_index": {
+   "2027": 1.1751109915369766,
+   "2028": 1.9295309583236913,
+   "2029": 2.709526834665568,
+   "2030": 3.432377945786911
+  },
+  "power": {
+   "ceiling_T_median": [
+    1.1480539882473124,
+    1.3848955930535354,
+    1.6316824802488472
+   ],
+   "plan_capex_T": [
+    1.35,
+    1.6,
+    1.7999999999999998
+   ],
+   "p_ceiling_binds": [
+    0.88085,
+    0.83535,
+    0.7268
+   ],
+   "median_excess_share": [
+    0.1495896383353243,
+    0.1344402543415405,
+    0.0935097331950848
+   ],
+   "p_revenue_capped_by_power": {
+    "2027": 0.00295,
+    "2028": 0.27135,
+    "2029": 0.330325,
+    "2030": 0.33355
+   },
+   "median_plan_index": {
+    "2027": 1.1820644068795674,
+    "2028": 1.8859862678140993,
+    "2029": 2.730080150858085,
+    "2030": 3.7065151899177757
+   },
+   "v1_plan_index": {
+    "2027": 1.1820644068795674,
+    "2028": 1.9604970650685507,
+    "2029": 2.8830839192184574,
+    "2030": 3.920994130137102
+   }
+  }
+ },
+ "g_upgrade_ablation": {
+  "ladder": [
+   {
+    "step": "v1: one demand tier, plan capex",
+    "end-2027": 0.2075,
+    "end-2028": 0.404,
+    "end-2029": 0.527,
+    "market_crash_end-2028": 0.4588,
+    "median_shortfall_end-2028": 0.08677360341939955,
+    "median_bust_date_given_bust_by_2030": 2028.5
+   },
+   {
+    "step": "+ flighty / sticky tiers",
+    "end-2027": 0.1992,
+    "end-2028": 0.3805,
+    "end-2029": 0.4876,
+    "market_crash_end-2028": 0.4327,
+    "median_shortfall_end-2028": 0.07111121582793017,
+    "median_bust_date_given_bust_by_2030": 2028.25
+   },
+   {
+    "step": "+ sovereign tier",
+    "end-2027": 0.1977,
+    "end-2028": 0.3722,
+    "end-2029": 0.4774,
+    "market_crash_end-2028": 0.4256,
+    "median_shortfall_end-2028": 0.06758640525258891,
+    "median_bust_date_given_bust_by_2030": 2028.25
+   },
+   {
+    "step": "+ flighty-only disillusionment events",
+    "end-2027": 0.2222,
+    "end-2028": 0.399,
+    "end-2029": 0.5006,
+    "market_crash_end-2028": 0.4568,
+    "median_shortfall_end-2028": 0.08585430967363356,
+    "median_bust_date_given_bust_by_2030": 2028.25
+   },
+   {
+    "step": "+ power ceiling (all on)",
+    "end-2027": 0.1767,
+    "end-2028": 0.3367,
+    "end-2029": 0.4449,
+    "market_crash_end-2028": 0.3876,
+    "median_shortfall_end-2028": 0.05191308400536532,
+    "median_bust_date_given_bust_by_2030": 2028.5
+   }
+  ],
+  "leave_one_out": {
+   "all on": {
+    "end-2027": 0.1767,
+    "end-2028": 0.3367,
+    "end-2029": 0.4449,
+    "market_crash_end-2028": 0.3876,
+    "median_shortfall_end-2028": 0.05191308400536532,
+    "median_bust_date_given_bust_by_2030": 2028.5
+   },
+   "without tiers (single tier, keeps power)": {
+    "end-2027": 0.1666,
+    "end-2028": 0.3432,
+    "end-2029": 0.4693,
+    "market_crash_end-2028": 0.3926,
+    "median_shortfall_end-2028": 0.046966812459688645,
+    "median_bust_date_given_bust_by_2030": 2028.5
+   },
+   "without sovereign": {
+    "end-2027": 0.1862,
+    "end-2028": 0.3523,
+    "end-2029": 0.4611,
+    "market_crash_end-2028": 0.403,
+    "median_shortfall_end-2028": 0.055992990661024256,
+    "median_bust_date_given_bust_by_2030": 2028.5
+   },
+   "without flighty events": {
+    "end-2027": 0.159,
+    "end-2028": 0.3146,
+    "end-2029": 0.4206,
+    "market_crash_end-2028": 0.3594,
+    "median_shortfall_end-2028": 0.038250553052401826,
+    "median_bust_date_given_bust_by_2030": 2028.5
+   },
+   "without power ceiling": {
+    "end-2027": 0.2222,
+    "end-2028": 0.399,
+    "end-2029": 0.5006,
+    "market_crash_end-2028": 0.4568,
+    "median_shortfall_end-2028": 0.08585430967363356,
+    "median_bust_date_given_bust_by_2030": 2028.25
+   }
+  },
+  "power_only": {
+   "end-2027": 0.1666,
+   "end-2028": 0.3432,
+   "end-2029": 0.4693,
+   "market_crash_end-2028": 0.3926,
+   "median_shortfall_end-2028": 0.046966812459688645,
+   "median_bust_date_given_bust_by_2030": 2028.5
+  }
+ },
+ "softer_capex_plan": {
+  "end-2027": 0.17785,
+  "end-2028": 0.30175,
+  "end-2029": 0.39295
+ },
+ "backtest": [
+  {
+   "case": "Telecom / dot-com",
+   "as_of": "Dec 1999",
+   "history": "Telecom investment boom began ~1996 -> 3 yrs in; earlier booms busted after a median 5 yrs",
+   "gsy": "Nasdaq ~+160% in 2 yrs, ~+105% net of S&P -> 53-80%",
+   "rzone": "Corporate credit growth and equity prices both high -> yes",
+   "fundamentals": "Capacity built for traffic 'doubling every 100 days' (~4x/yr) vs ~2x/yr actual -> large shortfall",
+   "signal": "High on all four",
+   "outcome": "Market crash (Nasdaq -78%) and economic bust (2001-02)"
+  },
+  {
+   "case": "Cloud buildout",
+   "as_of": "Oct 2018",
+   "history": "Hyperscaler capex ~0.4% of GDP -> below the boom threshold",
+   "gsy": "Big-tech 2-yr run-up well under +100% net of market -> base rate ~14%",
+   "rzone": "Mostly cash-funded, credit growth normal -> no",
+   "fundamentals": "Cloud revenue growing ~40%, capacity tracked demand",
+   "signal": "Low on all four",
+   "outcome": "No bust; SOX fell ~25% in Q4 2018, short of 40%"
+  },
+  {
+   "case": "Cloud software",
+   "as_of": "Dec 2020",
+   "history": "Not an investment boom",
+   "gsy": "Cloud-software stocks well over +100% in 2 yrs -> 53-80%",
+   "rzone": "Equity high, credit growth not top quintile -> no",
+   "fundamentals": "Revenue grew; no capacity overhang",
+   "signal": "High for a market crash, low for an economic bust",
+   "outcome": "Market crash (cloud indices -60%+ in 2022), no economic bust"
+  }
+ ],
+ "scorecard": [
+  [
+   "Capex vs revenue",
+   "Amazon, Alphabet and Microsoft spend 102% of cloud revenue on capex (2026)",
+   "Telecom capex ~1.4% of GDP at its 2000 peak; AI capex 1.8% of US GDP in 2026",
+   "Above telecom peak"
+  ],
+  [
+   "Debt funding",
+   "33-37% of hyperscaler capex debt-funded; ~$660B of off-balance-sheet leases",
+   "Telecom 1997-2001 was largely debt-financed",
+   "Rising"
+  ],
+  [
+   "Credit growth",
+   "Big-5 issuance $121B in 2025, >4x the 2020-24 average; AI private credit ~$0 -> $200B+",
+   "R-zone: top-quintile credit growth",
+   "In the zone"
+  ],
+  [
+   "Price run-up",
+   "SOX +181% in 12 months to June 2026",
+   "GSY run-up: >=100% in 2 years",
+   "In the zone"
+  ],
+  [
+   "Volatility",
+   "SOX: nine 5%+ up-days in 60 sessions (Jun 2026), matched in Jan 2009 and exceeded only in the dot-com era",
+   "GSY: rising volatility precedes crashes",
+   "Warning"
+  ],
+  [
+   "Issuance",
+   "CoreWeave $3.7B convertible (Sep 2026), lab IPO filings",
+   "GSY: issuance rises before crashes",
+   "Warning"
+  ],
+  [
+   "Credit spreads",
+   "Oracle 5-yr CDS record 227bp; CoreWeave loan SOFR+550bp with covenants",
+   "Spreads widen before busts",
+   "Widening"
+  ],
+  [
+   "Crowding",
+   "53% of fund managers: chips are the most crowded trade (Sep 2026)",
+   "Crowding precedes sharp reversals",
+   "Warning"
+  ],
+  [
+   "Rates",
+   "10-yr Treasury 5.29%, highest since 2007",
+   "Tightening often triggers busts",
+   "Warning"
+  ]
+ ],
+ "booms": [
+  {
+   "boom": "US canals",
+   "onset": 1834,
+   "bust": 1837,
+   "gap": 3,
+   "note": "Panic of 1837; state canal-debt defaults 1841-42"
+  },
+  {
+   "boom": "UK railway mania",
+   "onset": 1844,
+   "bust": 1847,
+   "gap": 3,
+   "note": "Railway share crash and panic of 1847"
+  },
+  {
+   "boom": "US railroads I",
+   "onset": 1868,
+   "bust": 1873,
+   "gap": 5,
+   "note": "Panic of 1873 (Jay Cooke & Co.)"
+  },
+  {
+   "boom": "US railroads II",
+   "onset": 1879,
+   "bust": 1884,
+   "gap": 5,
+   "note": "Panic of 1884; receiverships peak 1893"
+  },
+  {
+   "boom": "US electric utilities",
+   "onset": 1922,
+   "bust": 1929,
+   "gap": 7,
+   "note": "Utility holding-company collapse 1929-32"
+  },
+  {
+   "boom": "US telecom / fiber",
+   "onset": 1996,
+   "bust": 2001,
+   "gap": 5,
+   "note": "Telecom Act 1996; default wave 2001-02 (WorldCom, Global Crossing)"
+  },
+  {
+   "boom": "US housing",
+   "onset": 2002,
+   "bust": 2007,
+   "gap": 5,
+   "note": "Subprime crisis 2007-09"
+  },
+  {
+   "boom": "US shale oil",
+   "onset": 2011,
+   "bust": 2015,
+   "gap": 4,
+   "note": "Oil-price collapse late 2014; shale defaults 2015-16"
+  }
+ ],
+ "expected_damage": {
+  "model_d": {
+   "n": 10000,
+   "p_bust_outcome": 0.2743,
+   "p_sp500_30": 0.2396,
+   "expected_credit_losses": 56.74278907450065,
+   "p_credit_gt_100": 0.2018,
+   "p_credit_gt_250": 0.1162,
+   "expected_gdp_hit": 1.5580999491665377,
+   "p_neocloud_default": 0.2213,
+   "p_lab_default": 0.2204,
+   "p_private_credit_default": 0.0126,
+   "p_bank_default": 0.0,
+   "expected_bank_loss": 13.905978833189915,
+   "expected_pension_insurer_loss": 30.44646548583701,
+   "exceedance": [
+    {
+     "loss": 0,
+     "p": 0.8886
+    },
+    {
+     "loss": 10,
+     "p": 0.2872
+    },
+    {
+     "loss": 25,
+     "p": 0.2288
+    },
+    {
+     "loss": 50,
+     "p": 0.2213
+    },
+    {
+     "loss": 100,
+     "p": 0.2018
+    },
+    {
+     "loss": 150,
+     "p": 0.1351
+    },
+    {
+     "loss": 200,
+     "p": 0.133
+    },
+    {
+     "loss": 250,
+     "p": 0.1162
+    },
+    {
+     "loss": 300,
+     "p": 0.0789
+    },
+    {
+     "loss": 350,
+     "p": 0.0355
+    }
+   ]
+  },
+  "model_d_legal": {
+   "n": 10000,
+   "expected_credit_losses_booked": 58.70925825164161,
+   "expected_frozen_peak": 53.2805,
+   "p90_frozen_peak": 260.0,
+   "p_frozen_gt_100": 0.2054,
+   "p_bust_outcome": 0.2717
+  },
+  "model_f": {
+   "n": 400,
+   "p_neocloud_default": 0.3225,
+   "p_lab_default": 0.0025,
+   "p_fund_failure": 0.24,
+   "p_bank_failure": 0.0,
+   "expected_credit_losses": 22.56625,
+   "p_credit_gt_50": 0.215,
+   "p_credit_gt_100": 0.0575,
+   "p_sp500_30": 0.3,
+   "p_unemp_6": 0.0,
+   "expected_unemp_peak": 4.830525,
+   "expected_sovereign_spend": 35.19175,
+   "expected_frozen_claims_peak": 45.795249999999996,
+   "p90_frozen_claims_peak": 140.22000000000006,
+   "mean_cfo_actions": 12.24,
+   "expected_debt_exchange_haircut": 4.015875,
+   "expected_equity_injected": 1.6660750000000002,
+   "expected_interest_credited_to_lenders": 82.8535,
+   "expected_household_credit_losses": 22.00725,
+   "sfc_max_claim_imbalance": 0.0,
+   "sfc_max_networth_error": 0.0,
+   "network_top1_fund_share": 0.4509775,
+   "exceedance": [
+    {
+     "loss": 0,
+     "p": 0.5525
+    },
+    {
+     "loss": 10,
+     "p": 0.3625
+    },
+    {
+     "loss": 25,
+     "p": 0.2975
+    },
+    {
+     "loss": 50,
+     "p": 0.215
+    },
+    {
+     "loss": 75,
+     "p": 0.12
+    },
+    {
+     "loss": 100,
+     "p": 0.0575
+    },
+    {
+     "loss": 125,
+     "p": 0.005
+    },
+    {
+     "loss": 150,
+     "p": 0.0
+    }
+   ]
+  },
+  "model_f_v1": {
+   "n": 400,
+   "p_neocloud_default": 0.4475,
+   "p_lab_default": 0.0175,
+   "p_fund_failure": 0.0375,
+   "p_bank_failure": 0.0,
+   "expected_credit_losses": 30.9175,
+   "p_credit_gt_50": 0.3225,
+   "p_credit_gt_100": 0.0875,
+   "p_sp500_30": 0.4075,
+   "p_unemp_6": 0.3025,
+   "expected_unemp_peak": 5.2639,
+   "expected_sovereign_spend": 41.42,
+   "expected_frozen_claims_peak": 21.840999999999998,
+   "p90_frozen_claims_peak": 64.5,
+   "mean_cfo_actions": 0.0,
+   "expected_debt_exchange_haircut": 0.0,
+   "expected_equity_injected": 0.0,
+   "expected_interest_credited_to_lenders": 0.0,
+   "expected_household_credit_losses": 0.0,
+   "sfc_max_claim_imbalance": 0.0,
+   "sfc_max_networth_error": 0.0,
+   "network_top1_fund_share": 0.3591425,
+   "exceedance": [
+    {
+     "loss": 0,
+     "p": 0.5575
+    },
+    {
+     "loss": 10,
+     "p": 0.415
+    },
+    {
+     "loss": 25,
+     "p": 0.37
+    },
+    {
+     "loss": 50,
+     "p": 0.3225
+    },
+    {
+     "loss": 75,
+     "p": 0.21
+    },
+    {
+     "loss": 100,
+     "p": 0.0875
+    },
+    {
+     "loss": 125,
+     "p": 0.0125
+    },
+    {
+     "loss": 150,
+     "p": 0.0
+    }
+   ]
+  },
+  "model_f_by_shock": [
+   {
+    "shock": "0-10%",
+    "n": 263,
+    "p_neocloud_default": 0.053,
+    "p_lab_default": 0.0,
+    "p_fund_failure": 0.068,
+    "median_amplification": 2.51,
+    "median_excess_credit_losses": 0.0,
+    "p90_excess_credit_losses": 12.8,
+    "median_sp500_dd": 0.011,
+    "median_unemp_peak": 4.32,
+    "median_sovereign_spend": 0.0,
+    "p_bank_failure": 0.0
+   },
+   {
+    "shock": "10-20%",
+    "n": 43,
+    "p_neocloud_default": 0.512,
+    "p_lab_default": 0.0,
+    "p_fund_failure": 0.395,
+    "median_amplification": 1.83,
+    "median_excess_credit_losses": 15.8,
+    "p90_excess_credit_losses": 66.4,
+    "median_sp500_dd": 0.307,
+    "median_unemp_peak": 5.23,
+    "median_sovereign_spend": 3.8,
+    "p_bank_failure": 0.0
+   },
+   {
+    "shock": "20-30%",
+    "n": 27,
+    "p_neocloud_default": 1.0,
+    "p_lab_default": 0.0,
+    "p_fund_failure": 0.556,
+    "median_amplification": 1.63,
+    "median_excess_credit_losses": 59.7,
+    "p90_excess_credit_losses": 100.6,
+    "median_sp500_dd": 0.388,
+    "median_unemp_peak": 5.58,
+    "median_sovereign_spend": 70.7,
+    "p_bank_failure": 0.0
+   },
+   {
+    "shock": "30-40%",
+    "n": 27,
+    "p_neocloud_default": 0.963,
+    "p_lab_default": 0.037,
+    "p_fund_failure": 0.556,
+    "median_amplification": 1.37,
+    "median_excess_credit_losses": 48.0,
+    "p90_excess_credit_losses": 85.1,
+    "median_sp500_dd": 0.417,
+    "median_unemp_peak": 5.67,
+    "median_sovereign_spend": 114.9,
+    "p_bank_failure": 0.0
+   },
+   {
+    "shock": "40-56%",
+    "n": 31,
+    "p_neocloud_default": 1.0,
+    "p_lab_default": 0.0,
+    "p_fund_failure": 0.806,
+    "median_amplification": 1.22,
+    "median_excess_credit_losses": 92.9,
+    "p90_excess_credit_losses": 113.0,
+    "median_sp500_dd": 0.453,
+    "median_unemp_peak": 5.77,
+    "median_sovereign_spend": 217.0,
+    "p_bank_failure": 0.0
+   }
+  ],
+  "p_bust_used": 0.29499490934605777,
+  "p_shortfall_at_least": {
+   "15%": 0.29499490934605777,
+   "20%": 0.24242845838559543,
+   "25%": 0.2004449797394598,
+   "30%": 0.1649724243895869,
+   "40%": 0.1086170080326372
+  }
+ },
+ "mapping_sensitivity": {
+  "p_neocloud_failure_at_15pct": {
+   "central": 0.656,
+   "alternative": 0.20961842105263156
+  },
+  "credit_to_bust_ratio": {
+   "central": 0.9072490181963904,
+   "alternative": 1.1623928924931015
+  },
+  "market_crash_line": {
+   "central": [
+    0.1,
+    0.125
+   ],
+   "alternative": [
+    0.1615,
+    0.197
+   ]
+  },
+  "end_2028": {
+   "credit_implied_bust": {
+    "central": 0.10903495973431926,
+    "alternative": 0.13969864908799356
+   },
+   "fundamentals_market_crash": {
+    "central": 0.3758116883116883,
+    "alternative": 0.30352579894810416
+   },
+   "economic_bust_combined": {
+    "median": 0.30919619693855804,
+    "p10": 0.23433445729321972,
+    "p90": 0.39773505134945114,
+    "mean": 0.3132209690119332
+   },
+   "market_crash_combined": {
+    "median": 0.49077483688894424,
+    "p10": 0.3866659237158611,
+    "p90": 0.5828693442593669,
+    "mean": 0.4871422789500692
+   }
+  },
+  "model_f_alternative": {
+   "n": 400,
+   "p_neocloud_default": 0.27,
+   "p_lab_default": 0.0,
+   "p_fund_failure": 0.185,
+   "p_bank_failure": 0.0,
+   "expected_credit_losses": 17.383000000000003,
+   "p_credit_gt_50": 0.145,
+   "p_credit_gt_100": 0.035,
+   "p_sp500_30": 0.2475,
+   "p_unemp_6": 0.0,
+   "expected_unemp_peak": 4.7353749999999994,
+   "expected_sovereign_spend": 22.7975,
+   "expected_frozen_claims_peak": 36.545500000000004,
+   "p90_frozen_claims_peak": 140.0,
+   "mean_cfo_actions": 10.3325,
+   "expected_debt_exchange_haircut": 3.5814250000000003,
+   "expected_equity_injected": 1.605575,
+   "expected_interest_credited_to_lenders": 85.43974999999999,
+   "expected_household_credit_losses": 17.439,
+   "sfc_max_claim_imbalance": 0.0,
+   "sfc_max_networth_error": 0.0,
+   "network_top1_fund_share": 0.4509775,
+   "exceedance": [
+    {
+     "loss": 0,
+     "p": 0.5325
+    },
+    {
+     "loss": 10,
+     "p": 0.3075
+    },
+    {
+     "loss": 25,
+     "p": 0.2375
+    },
+    {
+     "loss": 50,
+     "p": 0.145
+    },
+    {
+     "loss": 75,
+     "p": 0.0925
+    },
+    {
+     "loss": 100,
+     "p": 0.035
+    },
+    {
+     "loss": 125,
+     "p": 0.0025
+    },
+    {
+     "loss": 150,
+     "p": 0.0
+    }
+   ]
+  }
+ },
+ "stall_decomposition": {
+  "with_stalls": {
+   "end-2027": 0.176675,
+   "end-2028": 0.33675,
+   "end-2029": 0.44485
+  },
+  "no_stalls": {
+   "end-2027": 0.0747,
+   "end-2028": 0.18675,
+   "end-2029": 0.266675
+  }
+ },
+ "mid_2027": {
+  "methods": {
+   "fundamentals": 0.07544885887772193,
+   "history": 0.14176202580051672,
+   "market": 0.03888658995069792,
+   "indicators": 0.2212853907324947
+  },
+  "fundamentals_point": 0.07515,
+  "combined": {
+   "median": 0.09685873792525874,
+   "p10": 0.06380027813820362,
+   "p90": 0.1462982220681667,
+   "mean": 0.10187921424420615
+  }
+ }
+}
