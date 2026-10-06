@@ -86,6 +86,8 @@ def render_md(text, depth=0):
             return m.group(0)
         path, _, frag = url.partition("#")
         up = "../" * depth
+        if path == "docs/paper.md":
+            return f'href="/paper{"#" + frag if frag else ""}"'
         if path.endswith(".md") and path.startswith("docs/"):
             new = f"{up}{path[:-3]}.html"
         elif path.startswith("../") and path.endswith(".md"):
