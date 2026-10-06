@@ -8,7 +8,7 @@ re-implement the model. Parameter values are in the `Params` dataclass (section 
 - **Time.** Euler step $\Delta t = 1/52$ year (one week); $t=0$ is 1 January 2027; horizon 3 years (156 steps). Flows are annual rates multiplied by $\Delta t$.
   Discrete events (contract expiry, loan maturity, quarterly contract reviews) sit in a priority queue keyed by exact time.
 - **Units.** Money in \$ billions; compute in thousands of GPUs (kGPU); prices in \$ per GPU-hour. One kGPU rented at \$1/hour earns $K = 1000\cdot 8760/10^9 = 0.00876$ \$B per year.
-  New GPU cost $=0.060$ \$B per kGPU; variable cost (power, operations; the rental floor) $=\$0.40$/hr.
+  New GPU cost $=0.060$ \$B per kGPU; variable cost (power, operations; the rental floor) is \$0.40/hr.
 - **Agents are anonymised archetypes** (Lab-1…5, NC-1…6, Bank-GSIB-1…5, …). Where a real firm anchors a calibration it is noted, but no agent is a named company's balance sheet.
 - **Randomness.** One `numpy.random.Generator` seeded with `Params.seed` (default 20260930). Two further private streams never disturb it: the CFO policy (`seed+7919`) and the
   lender-network draws (`seed+4242`). Toggling a mechanism therefore changes the *consumption* of the main stream, which is why ablations are only loosely paired across seeds.

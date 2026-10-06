@@ -765,7 +765,7 @@ Market data, company disclosures, forecasts and surveys cited in the text are li
     page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>When the Buildout Breaks</title><meta name="description" content="A working paper on the probability and damage of an AI investment bust. Not investment advice.">
 <style>{CSS}</style></head><body>
-<header class="top"><div class="in"><button class="menu" id="menubtn" aria-label="Contents">☰ Contents</button><b>When the Buildout Breaks</b><a class="opt" href="#live">Live update</a><a class="opt" href="#sec-18">Simulations</a><a class="opt" href="#app-a">Appendices</a><span class="sp"></span><a href="/">Dashboard</a><button class="opt" onclick="window.print()">Print / PDF</button></div><div id="prog"></div></header>
+<header class="top"><div class="in"><button class="menu" id="menubtn" aria-label="Contents">☰ Contents</button><b>When the Buildout Breaks</b><a class="opt" href="#live">Live update</a><a class="opt" href="#sec-18">Simulations</a><a class="opt" href="#app-a">Appendices</a><span class="sp"></span><a href="/">Dashboard</a><a class="opt" href="/open-source/">Open source</a><button class="opt" onclick="window.print()">Print / PDF</button></div><div id="prog"></div></header>
 <div class="wrap"><aside class="toc"><a href="#top"><b>Abstract</b></a><a href="#live">Live update</a>{tocs}</aside>
 <article id="top">
 <div class="titleblock"><div class="kicker">Working paper · Edition 2 · {EDITION_DATE}</div><h1>{esc(title)}</h1>
