@@ -2,6 +2,8 @@
 
 **How likely is an AI investment bust, and how bad would it be?** Models, simulations, a live-data dashboard and the working paper behind them.
 
+**Live:** [aibust.ykhalil.com](https://aibust.ykhalil.com/) (dashboard) and [the paper](https://aibust.ykhalil.com/paper). Built by [Yassin Khalil](https://ykhalil.com/) ([LinkedIn](https://www.linkedin.com/in/yassin-khalil/)).
+
 > **Not investment advice.** Everything here is model output for analysis, resting on stated judgment calls. It is not a forecast or a recommendation. The paper, the code and the documentation were written by Claude (Anthropic) at the direction of Yassin Khalil.
 
 ## What it answers

@@ -403,15 +403,15 @@ def provenance_html():
 # Page assembly
 # ---------------------------------------------------------------------------------------------------------------------
 CSS = r"""
-:root{--bg:#fafaf9;--card:#fff;--ink:#1c1917;--mute:#6b645f;--line:#e7e5e4;--acc:#b45309;--soft:#f5f5f4;--c1:#b45309;--c2:#44403c;--c3:#0e7490;--ok:#15803d;--bad:#b91c1c;--warn:#a16207;--link:#9a3412}
-@media (prefers-color-scheme:dark){:root{--bg:#141210;--card:#1c1917;--ink:#f5f5f4;--mute:#a8a29e;--line:#2e2a27;--acc:#f59e0b;--soft:#24201d;--c1:#f59e0b;--c2:#d6d3d1;--c3:#22d3ee;--ok:#4ade80;--bad:#f87171;--warn:#facc15;--link:#fdba74}}
+:root{--bg:#F5F6F8;--card:#fff;--ink:#0E1116;--mute:#4F5663;--line:#DEE1E7;--acc:#2D4EDD;--soft:#ECEEF2;--c1:#2D4EDD;--c2:#3B4350;--c3:#EB6834;--ok:#15803d;--bad:#b91c1c;--warn:#a16207;--link:#2D4EDD}
+@media (prefers-color-scheme:dark){:root{--bg:#0C0E12;--card:#14171D;--ink:#ECEEF2;--mute:#A2A9B6;--line:#242933;--acc:#7B93FF;--soft:#1A1E26;--c1:#7B93FF;--c2:#C8CEDA;--c3:#D95926;--ok:#4ade80;--bad:#f87171;--warn:#facc15;--link:#8FA4FF}}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:64px}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.62 Georgia,'Iowan Old Style','Times New Roman',serif}
-header.top{position:sticky;top:0;z-index:9;background:var(--bg);border-bottom:1px solid var(--line);font:14px system-ui,sans-serif}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.65 'Source Serif 4',Georgia,'Iowan Old Style','Times New Roman',serif;-webkit-font-smoothing:antialiased}
+header.top{position:sticky;top:0;z-index:9;background:var(--bg);border-bottom:1px solid var(--line);font:14px "Geist",system-ui,sans-serif}
 header.top .in{max-width:1180px;margin:0 auto;padding:9px 16px;display:flex;gap:16px;align-items:center}header.top .sp{flex:1}
-header.top a{color:var(--mute);text-decoration:none}header.top a:hover{color:var(--ink)}header.top b{color:var(--ink)}
+header.top a{color:var(--mute);text-decoration:none}header.top a:hover{color:var(--ink)}header.top b{color:var(--ink)}header.top a,header.top b,header.top button{white-space:nowrap}header.top b{overflow:hidden;text-overflow:ellipsis;min-width:0}header.top .home{display:inline-flex;align-items:center;gap:8px;color:var(--mute)}header.top .home i{font-style:normal;display:grid;place-items:center;width:26px;height:26px;background:var(--ink);color:var(--bg);border-radius:8px;font:600 11px/1 "Geist",system-ui,sans-serif;letter-spacing:.02em}header.top .div{width:1px;height:20px;background:var(--line)}
 .wrap{max-width:1180px;margin:0 auto;padding:0 16px;display:grid;grid-template-columns:230px minmax(0,1fr);gap:40px}
-aside.toc{position:sticky;top:58px;align-self:start;max-height:calc(100vh - 70px);overflow:auto;font:13px/1.4 system-ui,sans-serif;padding:22px 6px 24px 0;scrollbar-width:thin}
+aside.toc{position:sticky;top:58px;align-self:start;max-height:calc(100vh - 70px);overflow:auto;font:13px/1.4 "Geist",system-ui,sans-serif;padding:22px 6px 24px 0;scrollbar-width:thin}
 aside.toc a{display:flex;gap:7px;color:var(--mute);text-decoration:none;padding:4px 8px;border-left:2px solid transparent;border-radius:0 6px 6px 0}
 aside.toc a:hover{color:var(--ink);background:var(--soft)}
 aside.toc a.active{color:var(--ink);font-weight:600;border-left-color:var(--acc);background:var(--soft)}
@@ -423,39 +423,41 @@ aside.toc .subs{display:none}aside.toc .subs.open{display:block}
 .menu{display:none}
 article{min-width:0;max-width:780px;padding-bottom:70px}
 .titleblock{padding:46px 0 10px;border-bottom:2px solid var(--ink);margin-bottom:20px}
-.kicker{font:600 12px system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--acc)}
-h1{font-size:38px;line-height:1.12;margin:8px 0 6px;letter-spacing:-.015em}
-.byline{font:15px system-ui,sans-serif;color:var(--mute)}
-.keywords{font:14px system-ui,sans-serif;color:var(--mute);margin-top:10px}
-h2{font-size:26px;margin:46px 0 8px;line-height:1.2;letter-spacing:-.01em;border-top:1px solid var(--line);padding-top:26px}
-h3{font-size:20px;margin:30px 0 4px}h4{font:600 14px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.05em;color:var(--mute);margin:22px 0 6px}
-p{margin:10px 0}li{margin:5px 0}a{color:var(--link)}code{font:13.5px ui-monospace,Menlo,monospace;background:var(--soft);padding:1px 5px;border-radius:4px}
+.kicker{font:600 12px "Geist",system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--acc)}
+h1,h2,h3{font-family:"Geist",system-ui,sans-serif}h1{font-size:40px;line-height:1.08;margin:10px 0 8px;letter-spacing:-.035em;font-weight:600;text-wrap:balance}
+.byline{font:15px "Geist",system-ui,sans-serif;color:var(--mute)}
+.keywords{font:14px "Geist",system-ui,sans-serif;color:var(--mute);margin-top:10px}
+h2{font-size:27px;font-weight:600;margin:46px 0 8px;line-height:1.18;letter-spacing:-.025em;border-top:1px solid var(--line);padding-top:26px}
+h3{font-size:20px;font-weight:600;letter-spacing:-.015em;margin:30px 0 4px}h4{font:600 14px "Geist",system-ui,sans-serif;text-transform:uppercase;letter-spacing:.05em;color:var(--mute);margin:22px 0 6px}
+p{margin:10px 0}li{margin:5px 0}a{color:var(--link)}code{font:13.5px 'Geist Mono',ui-monospace,Menlo,monospace;background:var(--soft);padding:1px 5px;border-radius:4px}
 pre{overflow-x:auto;max-width:100%;background:var(--soft);padding:12px 14px;border-radius:8px;font-size:13px;line-height:1.5;margin:14px 0}pre code{background:none;padding:0;white-space:pre}
-table{border-collapse:collapse;width:100%;font:14px/1.4 system-ui,sans-serif;margin:12px 0}
+table{border-collapse:collapse;width:100%;font:14px/1.4 "Geist",system-ui,sans-serif;margin:12px 0}
 th,td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{font-weight:600;color:var(--mute);border-bottom:2px solid var(--line)}
 td.n,th.n{font-variant-numeric:tabular-nums}table.compact{font-size:13px}table.compact td:not(:first-child){font-variant-numeric:tabular-nums}
 .scroll{overflow-x:auto;margin:6px 0}table.reg{min-width:760px;font-size:13px}table.reg td{padding:9px 8px}.kind{color:var(--mute);font-size:12.5px;margin-top:2px;line-height:1.35}table.reg code{font-size:12px}
-.sub{color:var(--mute);font:14px system-ui,sans-serif}
-.box{border:1px solid var(--line);border-left:4px solid var(--acc);background:var(--card);padding:14px 18px;margin:20px 0;border-radius:0 10px 10px 0;font:15px/1.5 system-ui,sans-serif}
+.sub{color:var(--mute);font:14px "Geist",system-ui,sans-serif}
+.box{border:1px solid var(--line);border-left:4px solid var(--acc);background:var(--card);padding:14px 18px;margin:20px 0;border-radius:0 10px 10px 0;font:15px/1.5 "Geist",system-ui,sans-serif}
 .box h4{margin-top:0}.box.warn{border-left-color:var(--warn)}
 .abstract{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 22px 14px;margin:18px 0}
 .abstract h2{border:0;margin:14px 0 4px;padding:0;font-size:20px}
 figure.fig{margin:26px 0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 14px 10px}
-figure.fig svg{width:100%;height:auto;display:block}figure.fig svg text{fill:var(--mute);font:11px system-ui,sans-serif}
+figure.fig svg{width:100%;height:auto;display:block}figure.fig svg text{fill:var(--mute);font:11px "Geist",system-ui,sans-serif}
 svg .grid{stroke:var(--line);stroke-width:1}svg .whisk{stroke:var(--ink);stroke-width:1.6}svg .lab{fill:var(--ink)!important;font-weight:600}
 svg .band1{fill:var(--c1);opacity:.14}svg .band2{fill:var(--c1);opacity:.28}svg .ref{stroke:var(--mute);stroke-dasharray:4 3}svg .ref.red{stroke:var(--bad)}
-figcaption{font:13.5px/1.45 system-ui,sans-serif;color:var(--mute);margin-top:6px}figcaption b{color:var(--ink)}.src{display:block;font-size:12.5px}
-.srcnote{font:13px/1.45 system-ui,sans-serif;color:var(--mute);border-left:3px solid var(--line);padding:2px 12px;margin:14px 0}
-.badge{display:inline-block;padding:1px 9px;border-radius:999px;font:600 12px system-ui,sans-serif;border:1px solid var(--line)}
+figcaption{font:13.5px/1.45 "Geist",system-ui,sans-serif;color:var(--mute);margin-top:6px}figcaption b{color:var(--ink)}.src{display:block;font-size:12.5px}
+.srcnote{font:13px/1.45 "Geist",system-ui,sans-serif;color:var(--mute);border-left:3px solid var(--line);padding:2px 12px;margin:14px 0}
+.badge{display:inline-block;padding:1px 9px;border-radius:999px;font:600 12px "Geist",system-ui,sans-serif;border:1px solid var(--line)}
 .b-live{color:var(--ok);border-color:var(--ok)}.b-rec{color:var(--warn);border-color:var(--warn)}
 .up{color:var(--bad)}.down{color:var(--ok)}
-button{font:14px system-ui,sans-serif;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:5px 12px;cursor:pointer}
-footer.foot{border-top:1px solid var(--line);padding:18px 0 40px;font:13px system-ui,sans-serif;color:var(--mute)}
+button{border-radius:10px;font:14px "Geist",system-ui,sans-serif;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:5px 12px;cursor:pointer}
+footer.foot{border-top:1px solid var(--line);padding:18px 0 40px;font:13px "Geist",system-ui,sans-serif;color:var(--mute)}
 @media(max-width:940px){.wrap{display:block}aside.toc{display:none}h1{font-size:30px}body{font-size:16px}.menu{display:inline-block}
 body.tocopen aside.toc{display:block;position:fixed;z-index:8;left:0;right:0;top:50px;bottom:0;max-height:none;background:var(--bg);padding:12px 16px 40px;overflow:auto}
 body.tocopen{overflow:hidden}}
-@media(max-width:620px){header.top .opt{display:none}header.top .in{gap:10px}.titleblock{padding-top:28px}h2{font-size:23px}figure.fig{padding:10px 8px 8px}.abstract{padding:2px 14px 10px}table{font-size:13px}}
+@media(max-width:620px){header.top .opt,header.top .home span,header.top .div{display:none}header.top .in{gap:10px}.titleblock{padding-top:28px}h2{font-size:23px}figure.fig{padding:10px 8px 8px}.abstract{padding:2px 14px 10px}table{font-size:13px}}
 @media print{header.top,aside.toc,button{display:none!important}.wrap{display:block}body{font-size:11pt}figure,table,.box{break-inside:avoid}a{color:inherit;text-decoration:none}}
+.byauthor{margin:40px 0 0;padding:22px 24px;border-radius:16px;background:var(--ink);color:var(--bg);font:15px/1.5 "Geist",system-ui,sans-serif;display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:space-between}.byauthor b{display:block;font-size:19px;letter-spacing:-.02em;margin-bottom:2px}.byauthor span{opacity:.75}.byauthor a{display:inline-flex;align-items:center;height:42px;padding:0 18px;border-radius:10px;text-decoration:none;font-weight:600;color:var(--bg);border:1px solid color-mix(in srgb,var(--bg) 35%,transparent)}.byauthor a.p{background:var(--acc);color:var(--bg);border-color:transparent}.byauthor .row{display:flex;gap:10px;flex-wrap:wrap}
+footer.foot a{color:var(--link)}
 """
 
 LIVE_JS = r"""
@@ -747,8 +749,8 @@ Market data, company disclosures, forecasts and surveys cited in the text are li
                 t.append(f'<a class="grp" href="#{i}">{esc(re.sub(r"^Part (\w+) — ", r"Part \1 · ", txt))}</a>')
                 continue
             mm = re.match(r"(\d+)\.\s+(.*)", txt) or re.match(r"Appendix ([A-Z])\.\s+(.*)", txt)
-            num, title = (mm.group(1), mm.group(2)) if mm else ("", txt)
-            t.append(f'<a class="l2" data-id="{i}" href="#{i}"><span class="num">{num}</span><span>{esc(title)}</span></a><div class="subs" data-for="{i}">')
+            num, ttl = (mm.group(1), mm.group(2)) if mm else ("", txt)
+            t.append(f'<a class="l2" data-id="{i}" href="#{i}"><span class="num">{num}</span><span>{esc(ttl)}</span></a><div class="subs" data-for="{i}">')
             open_sub = True
         elif lvl == 3 and open_sub:
             t.append(f'<a class="l3" data-id="{i}" href="#{i}">{esc(txt)}</a>')
@@ -763,9 +765,17 @@ Market data, company disclosures, forecasts and surveys cited in the text are li
     abs_html = abs_html.replace("\\~", "~")
     byl = re.sub(r"@", "", byline.split("·")[-1]).strip()
     page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>When the Buildout Breaks</title><meta name="description" content="A working paper on the probability and damage of an AI investment bust. Not investment advice.">
+<title>When the Buildout Breaks: how likely is an AI bust, and how bad would it be?</title>
+<meta name="description" content="A working paper on the probability and damage of an AI investment bust: four pooled estimates of the odds, two damage models, full methods and code. Not investment advice.">
+<link rel="canonical" href="https://aibust.ykhalil.com/paper"><meta name="color-scheme" content="light dark">
+<meta property="og:type" content="article"><meta property="og:site_name" content="AI Bust Odds"><meta property="og:title" content="When the Buildout Breaks: how likely is an AI bust, and how bad would it be?">
+<meta property="og:description" content="Four pooled estimates of the odds, two damage models, full methods and code. A working paper by Yassin Khalil. Not investment advice."><meta property="og:url" content="https://aibust.ykhalil.com/paper">
+<meta property="og:image" content="https://aibust.ykhalil.com/assets/aibust-og.png"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="preload" href="/assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/source-serif-4-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/fonts.css">
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"When the Buildout Breaks: How Likely Is an AI Bust, and How Bad Would It Be?","url":"https://aibust.ykhalil.com/paper","datePublished":"2026-09-30","inLanguage":"en","isAccessibleForFree":true,"author":{{"@type":"Person","name":"Yassin Khalil","url":"https://ykhalil.com/","sameAs":["https://www.linkedin.com/in/yassin-khalil/","https://github.com/YassinKkhalil4"]}},"codeRepository":"https://github.com/YassinKkhalil4/when-the-buildout-breaks","keywords":"AI investment boom, financial stability, crash probability, contagion, agent-based model, credit risk"}}</script>
 <style>{CSS}</style></head><body>
-<header class="top"><div class="in"><button class="menu" id="menubtn" aria-label="Contents">☰ Contents</button><b>When the Buildout Breaks</b><a class="opt" href="#live">Live update</a><a class="opt" href="#sec-18">Simulations</a><a class="opt" href="#app-a">Appendices</a><span class="sp"></span><a href="/">Dashboard</a><a class="opt" href="/open-source/">Open source</a><button class="opt" onclick="window.print()">Print / PDF</button></div><div id="prog"></div></header>
+<header class="top"><div class="in"><button class="menu" id="menubtn" aria-label="Contents">☰ Contents</button><a class="home" href="https://ykhalil.com/" aria-label="Yassin Khalil, home"><i>YK</i><span>ykhalil.com</span></a><span class="div"></span><b>When the Buildout Breaks</b><a class="opt" href="#live">Live update</a><a class="opt" href="#sec-18">Simulations</a><a class="opt" href="#app-a">Appendices</a><span class="sp"></span><a href="/">Live dashboard</a><a class="opt" href="/open-source/">Open source</a><button class="opt" onclick="window.print()">Print / PDF</button></div><div id="prog"></div></header>
 <div class="wrap"><aside class="toc"><a href="#top"><b>Abstract</b></a><a href="#live">Live update</a>{tocs}</aside>
 <article id="top">
 <div class="titleblock"><div class="kicker">Working paper · Edition 2 · {EDITION_DATE}</div><h1>{esc(title)}</h1>
@@ -775,7 +785,8 @@ Market data, company disclosures, forecasts and surveys cited in the text are li
 <div class="abstract"><h2>Abstract</h2>{abs_html}</div>
 <div class="box" id="live"><h4>Live update</h4><div id="livebody"><p class="sub">Loading live numbers…</p></div></div>
 {h}
-<footer class="foot">When the Buildout Breaks · Edition 2, {EDITION_DATE} · Generated by build_site.py from working_paper.md and the result files · Not investment advice.</footer>
+<aside class="byauthor" aria-label="About the author"><div><b>Written at the direction of Yassin Khalil</b><span>I build software, automation and data tools for founders.</span></div><div class="row"><a class="p" href="https://ykhalil.com/">See my work</a><a href="https://www.linkedin.com/in/yassin-khalil/" rel="noopener">LinkedIn</a><a href="https://github.com/YassinKkhalil4/when-the-buildout-breaks" rel="noopener">Code</a></div></aside>
+<footer class="foot">When the Buildout Breaks · Edition 2, {EDITION_DATE} · Generated by build_site.py from working_paper.md and the result files · Not investment advice. Built by <a href="https://ykhalil.com/">Yassin Khalil</a>.</footer>
 </article></div>
 <script>{LIVE_JS.replace('%PAPER%', paper_js)}{SPY_JS}</script></body></html>"""
     open(os.path.join(HERE, "paper.html"), "w", encoding="utf-8").write(page)

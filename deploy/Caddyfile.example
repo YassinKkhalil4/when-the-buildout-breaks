@@ -18,5 +18,12 @@ paper.example.org {
 		-Server
 	}
 
+	# Fonts, favicon and share image used by the dashboard and the paper: copy site-assets/ to this folder.
+	handle_path /assets/* {
+		root * /var/www/ai-bust-assets
+		header Cache-Control "public, max-age=2592000"
+		file_server
+	}
+
 	reverse_proxy 127.0.0.1:8000
 }
