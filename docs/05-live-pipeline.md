@@ -11,7 +11,7 @@ fetchers  ->  snapshot  ->  calibration  ->  models  ->  SQLite history  ->  Fas
 | Input | Source | Status |
 |---|---|---|
 | Policy and long rates | U.S. Treasury daily par yield curve CSV (fallback: FRED `fredgraph.csv`) | live |
-| Equity prices, drawdowns, volatility | Stooq daily CSV (fallback: Yahoo Finance chart API) | live (Stooq currently answers with a bot-check page, so Yahoo is used) |
+| Equity prices, drawdowns, volatility | Yahoo Finance chart API (fallback: Stooq daily CSV) | live (Stooq now answers with a bot-check page, so it only serves as a fallback) |
 | Debt maturity ladders, capex, revenue, interest, cash, leases | SEC EDGAR XBRL `companyfacts` | live |
 | Filing dates | SEC EDGAR `submissions` | live |
 | Credit spreads and CDS, option-implied volatility, lab revenue run-rates, neocloud backlog | none free | **manual**, from `manual_inputs.json`, flagged as manual |

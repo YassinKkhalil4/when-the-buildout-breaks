@@ -7,7 +7,7 @@ Live-data pipeline and contagion dashboard for the AI-bust working paper.
 
 WHAT IS LIVE
   * Policy and long rates ................ U.S. Treasury daily par yield curve (fallback: FRED CSV)
-  * Equity prices, drawdowns, volatility .. Stooq daily CSV (fallback: Yahoo chart API)
+  * Equity prices, drawdowns, volatility .. Yahoo chart API (fallback: Stooq daily CSV, now behind a bot check)
   * Debt maturity ladders, capex, revenue,
     interest, cash, lease liabilities ..... SEC EDGAR XBRL "companyfacts" (what the 10-K / 10-Q tables report)
   * Filing dates ......................... SEC EDGAR "submissions"
@@ -273,7 +273,7 @@ def fetch_rates(get=http_get) -> tuple[dict, dict]:
     url = ("https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/"
            f"{year}/all?type=daily_treasury_yield_curve&field_tdr_date_value={year}&page&_format=csv")
     try:
-        status, text = get(url)
+        status, text = get(url, timeout=60)          # treasury.gov takes 17-20 s to answer; the 20 s default timed out at random
         if status != 200:
             raise ConnectionError(f"HTTP {status}")
         return parse_treasury_csv(text), _src(True, url)
@@ -296,23 +296,23 @@ def fetch_rates(get=http_get) -> tuple[dict, dict]:
 def fetch_prices(label: str, get=http_get) -> tuple[dict, dict]:
     stq, yh = SYMBOLS[label]
     errs = []
-    try:
+    try:                                                            # Yahoo first: Stooq now sits behind a JavaScript bot check
+        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{yh}?range=14mo&interval=1d"
+        status, text = get(url)
+        if status != 200:
+            raise ConnectionError(f"HTTP {status}")
+        return price_metrics(parse_yahoo_chart(text)), _src(True, url)
+    except Exception as e:
+        errs.append(f"yahoo: {e}")
+    try:                                                            # Stooq stays as the fallback in case it opens up again
         start = (dt.date.today() - dt.timedelta(days=420)).strftime("%Y%m%d")
         url = f"https://stooq.com/q/d/l/?s={stq}&i=d&d1={start}&d2={dt.date.today().strftime('%Y%m%d')}"
         status, text = get(url)
         if status != 200 or "Date" not in text[:20]:
             raise ConnectionError(f"HTTP {status} / unexpected body")
-        return price_metrics(parse_stooq_csv(text)), _src(True, url)
+        return price_metrics(parse_stooq_csv(text)), _src(True, url, err="; ".join(errs))
     except Exception as e:
         errs.append(f"stooq: {e}")
-    try:
-        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{yh}?range=14mo&interval=1d"
-        status, text = get(url)
-        if status != 200:
-            raise ConnectionError(f"HTTP {status}")
-        return price_metrics(parse_yahoo_chart(text)), _src(True, url, err="; ".join(errs))
-    except Exception as e:
-        errs.append(f"yahoo: {e}")
     return {}, _src(False, None, "; ".join(errs))
 
 
@@ -531,10 +531,10 @@ def refresh(mode="live", recorded_path: str | None = None, get=http_get, **model
 try:
     from fastapi import BackgroundTasks, FastAPI, HTTPException
     from fastapi.responses import HTMLResponse
-    app = FastAPI(title="AI-bust contagion dashboard")
+    from contextlib import asynccontextmanager
 
-    @app.on_event("startup")
-    def _maybe_schedule():
+    @asynccontextmanager
+    async def _lifespan(_app):
         mins = float(os.environ.get("AI_BUST_REFRESH_MIN", "0") or 0)
         if mins > 0:
             def loop():
@@ -545,6 +545,9 @@ try:
                         pass
                     time.sleep(mins * 60)
             threading.Thread(target=loop, daemon=True).start()
+        yield
+
+    app = FastAPI(title="AI-bust contagion dashboard", lifespan=_lifespan)
 
     @app.get("/api/state")
     def api_state():
